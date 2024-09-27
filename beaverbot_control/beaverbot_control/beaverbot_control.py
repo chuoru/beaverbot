@@ -130,7 +130,8 @@ class BeaverbotControl(object):
             msg.pose.pose.orientation.w,
         )
 
-        heading = Rotation.from_quat(quaternion).as_euler("zyx", degrees=False)[0]
+        heading = Rotation.from_quat(quaternion).as_euler(
+            "zyx", degrees=False)[0]
 
         self._state = [msg.pose.pose.position.x,
                        msg.pose.pose.position.y,
